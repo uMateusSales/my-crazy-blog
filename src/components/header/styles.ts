@@ -24,6 +24,7 @@ export const HeaderTitle = styled.p`
 
 export const ProfileCard = styled.div`
   display: flex;
+
   position: absolute;
   min-width: 864px;
   min-height: 212px;
@@ -46,6 +47,7 @@ export const UserContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 32px;
+  justify-content: space-between;
 `;
 export const UserName = styled.p`
   color: var(--base-title, #e7edf4);
@@ -62,4 +64,28 @@ export const UserBio = styled.p`
   font-weight: 400;
   line-height: 160%;
   color: var(--base-text, #afc2d4);
+`;
+
+export const ContatosCard = styled.div`
+  display: flex;
+  justify-self: flex-end;
+  margin-top: 24px;
+  gap: 10px;
+`;
+
+export const LinkContainer = styled.a`
+  color: lightblue;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 1px 1px 1px 1px gray;
+  padding: 4px;
+  border: 2px;
+  border-color: aliceblue;
+  border-radius: 8px;
+
+  &:hover {
+    opacity: 80%;
+  }
 `;
