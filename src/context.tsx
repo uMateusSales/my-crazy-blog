@@ -5,19 +5,16 @@ import {
   useEffect,
   useState,
 } from "react";
-
 import axios from "axios";
-
-interface IPost {
-  id: number;
-  title: string;
-  body: string;
+interface User {
+  avatar: string;
+  name: string;
+  bio: string;
+  url: string;
 }
 
 interface GlobalContextType {
-  posts: IPost[];
-
-  user: string;
+  user: User;
 }
 
 export const GlobalContext = createContext<GlobalContextType>(
@@ -27,23 +24,31 @@ export const GlobalContext = createContext<GlobalContextType>(
 interface GlobalContextProps {
   children: ReactNode;
 }
-export const GlobalContextProvider = ({ children }: GlobalContextProps) => {
-  const [posts, setPosts] = useState<IPost[]>([]);
-  const [user, setUser] = useState("");
+export const GlobalProvider = ({ children }: GlobalContextProps) => {
+  const [user, setUser] = useState<User>("");
 
-  const getUser = async () => {
-    const response = await fetch("https://api.github.com/users/uMateusSales");
-    const json = await response.json();
-    setUser(json.name);
-  };
+  const getUser = useCallback(async () => {
+    try {
+      const response = await axios.get("/users/uMateusSales", {
+        baseURL: "https://api.github.com",
+      });
+
+      setUser({
+        name: response.data.name,
+        bio: response.data.bio,
+        avatar: response.data.avatar_url,
+        url: response.data.url,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   useEffect(() => {
     getUser();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ posts, user }}>
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext.Provider value={{ user }}>{children}</GlobalContext.Provider>
   );
 };
