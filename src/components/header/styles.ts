@@ -26,11 +26,11 @@ export const ProfileCard = styled.div`
   display: flex;
 
   position: absolute;
-  min-width: 864px;
+
   min-height: 212px;
-  bottom: -220px;
+  bottom: -210px;
   right: 288px;
-  left: 288px;
+  left: 230px;
   padding: 32px;
   border-radius: 10px;
   background: #0b1b2b;
@@ -74,12 +74,14 @@ export const ContatosCard = styled.div`
 `;
 
 export const LinkContainer = styled.a`
+  background-color: #040f1a;
   color: lightblue;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 1px 1px 1px 1px gray;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
   padding: 4px;
   border: 2px;
   border-color: aliceblue;

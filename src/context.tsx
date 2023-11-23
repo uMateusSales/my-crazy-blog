@@ -13,8 +13,14 @@ interface User {
   url: string;
 }
 
+interface Post {
+  title: string;
+  body: string;
+}
+
 interface GlobalContextType {
   user: User;
+  posts: Post[];
 }
 
 export const GlobalContext = createContext<GlobalContextType>(
@@ -25,7 +31,14 @@ interface GlobalContextProps {
   children: ReactNode;
 }
 export const GlobalProvider = ({ children }: GlobalContextProps) => {
-  const [user, setUser] = useState<User>("");
+  const [user, setUser] = useState<User>({
+    name: "",
+    bio: "",
+    avatar: "",
+    url: "",
+  });
+
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const getUser = useCallback(async () => {
     try {
@@ -44,11 +57,29 @@ export const GlobalProvider = ({ children }: GlobalContextProps) => {
     }
   }, []);
 
+  const getIssues = useCallback(async () => {
+    try {
+      const response = await axios.get("/search/issues", {
+        baseURL: "https://api.github.com",
+        params: { q: "repo:uMateusSales/my-crazy-blog" },
+      });
+
+      console.log(response.data.items);
+
+      setPosts(response.data.items);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   useEffect(() => {
     getUser();
+    getIssues();
   }, []);
 
   return (
-    <GlobalContext.Provider value={{ user }}>{children}</GlobalContext.Provider>
+    <GlobalContext.Provider value={{ user, posts }}>
+      {children}
+    </GlobalContext.Provider>
   );
 };
