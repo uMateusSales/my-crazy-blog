@@ -9,7 +9,10 @@ const PostPreview = () => {
     <>
       <PostContainer>
         {posts.map((i) => (
-          <p>{i.title}</p>
+          <div>
+            <p>{i.title}</p>
+            <p>{i.body}</p>
+          </div>
         ))}
       </PostContainer>{" "}
     </>

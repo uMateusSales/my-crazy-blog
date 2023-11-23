@@ -6,4 +6,6 @@ export const PostContainer = styled.article`
   border-radius: 10px;
   background: var(--base-post, #112131);
   margin-top: 250px;
+  align-self: center;
+  padding: 10px;
 `;
