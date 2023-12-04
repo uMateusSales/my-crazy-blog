@@ -1,13 +1,18 @@
 import PostPreview from "../../components/PostPreview/PostPreview";
 import Header from "../../components/header/Header";
-import { MainContainer } from "./styles";
-
+import { MainContainer, ProfileSection } from "./styles";
+import ProfileContainer from "../../components/profilecard/ProfileCard";
 const HomePage = () => {
   return (
-    <MainContainer>
+    <>
       <Header />
-      <PostPreview />
-    </MainContainer>
+      <ProfileSection>
+        <ProfileContainer />
+      </ProfileSection>
+      <MainContainer>
+        <PostPreview />
+      </MainContainer>
+    </>
   );
 };
 

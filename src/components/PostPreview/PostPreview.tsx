@@ -1,5 +1,5 @@
 import { GlobalContext } from "../../context";
-import { PostContainer } from "./styles";
+import { PostContainer, PostContent, PostSection, PostTitle } from "./styles";
 import { useContext } from "react";
 
 const PostPreview = () => {
@@ -7,14 +7,14 @@ const PostPreview = () => {
 
   return (
     <>
-      <PostContainer>
+      <PostSection>
         {posts.map((i) => (
-          <div>
-            <p>{i.title}</p>
-            <p>{i.body}</p>
-          </div>
+          <PostContainer to={`/post/${i.id}`}>
+            <PostTitle>{i.title}</PostTitle>
+            <PostContent>{i.body}</PostContent>
+          </PostContainer>
         ))}
-      </PostContainer>{" "}
+      </PostSection>
     </>
   );
 };

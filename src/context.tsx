@@ -11,11 +11,16 @@ interface User {
   name: string;
   bio: string;
   url: string;
+  repos: number;
+  location: string;
 }
 
-interface Post {
+export interface Post {
   title: string;
   body: string;
+  id: string;
+  created_at: Date;
+  html_url: string;
 }
 
 interface GlobalContextType {
@@ -36,6 +41,8 @@ export const GlobalProvider = ({ children }: GlobalContextProps) => {
     bio: "",
     avatar: "",
     url: "",
+    repos: 0,
+    location: "",
   });
 
   const [posts, setPosts] = useState<Post[]>([]);
@@ -45,12 +52,13 @@ export const GlobalProvider = ({ children }: GlobalContextProps) => {
       const response = await axios.get("/users/uMateusSales", {
         baseURL: "https://api.github.com",
       });
-
       setUser({
         name: response.data.name,
         bio: response.data.bio,
         avatar: response.data.avatar_url,
         url: response.data.url,
+        repos: response.data.public_repos,
+        location: response.data.location,
       });
     } catch (error) {
       console.log(error);
@@ -63,8 +71,6 @@ export const GlobalProvider = ({ children }: GlobalContextProps) => {
         baseURL: "https://api.github.com",
         params: { q: "repo:uMateusSales/my-crazy-blog" },
       });
-
-      console.log(response.data.items);
 
       setPosts(response.data.items);
     } catch (error) {
