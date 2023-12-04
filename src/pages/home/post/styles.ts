@@ -75,13 +75,27 @@ export const ContentContainer = styled.section`
   padding: 40px 32px;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 24px;
+  margin-top: 200px;
 `;
 
 export const PostContent = styled.p`
+  color: var(--base-text, #afc2d4);
+
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
+`;
+
+export const MainContent = styled.section`
+  max-width: 100%;
+  height: 1709px;
+  background-color: #071422;
+  display: flex;
+  flex-direction: column;
+  padding-left: 288px;
+  padding-right: 288px;
 `;

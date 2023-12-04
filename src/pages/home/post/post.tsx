@@ -15,6 +15,7 @@ import { GlobalContext, Post } from "../../../context";
 import LeftArrow from "../../../assets/LeftArrow";
 import GitRedirect from "../../../assets/GitRedirect";
 import Header from "../../../components/header/Header";
+import { MainContainer } from "../styles";
 
 const PostPage = () => {
   const { posts } = useContext(GlobalContext);
@@ -51,9 +52,11 @@ const PostPage = () => {
           <PostTitle>{post?.title}</PostTitle>
         </PostCard>
       </PostSection>
-      <ContentContainer>
-        <PostContent>{post?.body}</PostContent>
-      </ContentContainer>
+      <MainContainer>
+        <ContentContainer>
+          <PostContent>{post?.body}</PostContent>
+        </ContentContainer>
+      </MainContainer>
     </>
   );
 };

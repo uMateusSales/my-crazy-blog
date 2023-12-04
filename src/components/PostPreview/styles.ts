@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 export const PostSection = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 32px;
   justify-content: center;
   align-items: center;
+  margin-top: 250px;
 `;
 
 export const PostContainer = styled(Link)`
@@ -16,7 +18,7 @@ export const PostContainer = styled(Link)`
   text-decoration: none;
   border-radius: 10px;
   background: var(--base-post, #112131);
-  margin-top: 250px;
+
   align-self: center;
   padding: 10px;
 `;
@@ -34,7 +36,6 @@ export const PostContent = styled.p`
   overflow: hidden;
   color: var(--base-text, #afc2d4);
   text-overflow: ellipsis;
-  white-space: nowrap;
 
   font-family: Nunito;
   font-size: 16px;
