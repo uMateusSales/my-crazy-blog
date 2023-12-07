@@ -44,7 +44,7 @@ const PostPage = () => {
               <LeftArrow />
               voltar
             </BackButton>
-            <GithubButton target="_blank" to={post?.html_url}>
+            <GithubButton target="_blank" to={post?.html_url || ""}>
               ver no github
               <GitRedirect />
             </GithubButton>

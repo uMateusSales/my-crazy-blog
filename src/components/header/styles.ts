@@ -1,10 +1,13 @@
 import styled from "styled-components";
 export const HeaderContainer = styled.header`
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #0b1b2b;
+  justify-content: center;
+  max-width: 100vw;
+  background-image: url("/Cover.png");
+  min-height: 296px;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const TitleContainer = styled.div`
@@ -12,6 +15,7 @@ export const TitleContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 80px;
 `;
 export const HeaderTitle = styled.p`
   color: var(--brand-blue, #3294f8);
@@ -19,5 +23,5 @@ export const HeaderTitle = styled.p`
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%; /* 38.4px */
+  line-height: 160%;
 `;

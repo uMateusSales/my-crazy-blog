@@ -2,13 +2,10 @@ import styled from "styled-components";
 
 export const ProfileCard = styled.div`
   display: flex;
-
-  position: absolute;
-
+  margin-top: -100px;
   min-height: 212px;
-  bottom: -210px;
-  right: 288px;
-  left: 230px;
+  align-items: center;
+  justify-content: center;
   padding: 32px;
   border-radius: 10px;
   background: #0b1b2b;

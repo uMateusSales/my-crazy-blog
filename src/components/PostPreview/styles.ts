@@ -2,25 +2,29 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const PostSection = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  justify-content: center;
+  display: flex;
+
+  justify-content: space-between;
   align-items: center;
-  margin-top: 250px;
+
+  flex-wrap: wrap;
 `;
 
 export const PostContainer = styled(Link)`
   display: flex;
   flex-direction: column;
-  width: 416px;
-  height: 260px;
+  margin-top: 20px;
+  width: 38%;
+  height: 200px;
   text-decoration: none;
   border-radius: 10px;
   background: var(--base-post, #112131);
-
   align-self: center;
-  padding: 10px;
+  padding: 5%;
+
+  @media (max-width: 780px) {
+    width: 100%;
+  }
 `;
 
 export const PostTitle = styled.h4`

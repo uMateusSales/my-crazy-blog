@@ -1,17 +1,20 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
+  padding: 0px 10%;
+
+  background-color: #071422;
+`;
+
+export const MainSection = styled.section`
   max-width: 100%;
   height: 1709px;
   background-color: #071422;
   display: flex;
   flex-direction: column;
-  padding-left: 288px;
-  padding-right: 288px;
 `;
 
 export const ProfileSection = styled.div`
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
