@@ -35,7 +35,7 @@ const PostPage = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ backgroundColor: " #071422" }}>
       <Header />
       <PostSection>
         <PostCard>
@@ -57,7 +57,7 @@ const PostPage = () => {
           <PostContent>{post?.body}</PostContent>
         </ContentContainer>
       </MainContainer>
-    </>
+    </div>
   );
 };
 

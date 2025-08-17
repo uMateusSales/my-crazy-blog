@@ -19,7 +19,7 @@ const ProfileContainer = () => {
   const { user } = useContext(GlobalContext);
   return (
     <ProfileCard>
-      <Avatar src={user.avatar} />
+      <Avatar src={"/mateus-2.png"} />
       <UserContainer>
         <UserName>{user.name}</UserName>
         <UserBio>{user.bio}</UserBio>
