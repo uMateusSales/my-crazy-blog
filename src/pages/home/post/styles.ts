@@ -61,12 +61,13 @@ export const GithubButton = styled(Link)`
 
 export const PostTitle = styled.h1`
   color: var(--base-title, #e7edf4);
-
+text-align: center;
   font-family: Nunito;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
+  margin-top: 3rem;
 `;
 
 export const ContentContainer = styled.section`
@@ -78,11 +79,12 @@ export const ContentContainer = styled.section`
   justify-content: center;
   gap: 24px;
   margin-top: 200px;
+  overflow: hidden
 `;
 
 export const PostContent = styled.p`
   color: var(--base-text, #afc2d4);
-
+text-align: center;
   font-family: Nunito;
   font-size: 16px;
   font-style: normal;

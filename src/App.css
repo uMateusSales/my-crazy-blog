@@ -103,6 +103,7 @@ section {
 }
 body {
   line-height: 1;
+
 }
 ol,
 ul {
@@ -123,3 +124,4 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html, body { height: 100%; background-color: #0b1b2b; } 
